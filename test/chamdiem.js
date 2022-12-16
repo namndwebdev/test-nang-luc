@@ -2,7 +2,7 @@ let expect = require("chai").expect;
 let { addARR, sortarr, sortarr1, sum, mystring } = require("./bai1");
 let { age } = require("./bai2");
 let { Number, sortsanpham, title } = require("./bai4");
-let { timkiem, thaythe } = require("./bai6");
+let { timkiem, thaythe,laychuoi } = require("./bai6");
 let { FunctionTest } = require("./bai7");
 let { Print, Sum, PrintArr4, PrintArr4Odd } = require("./bai3");
 let { DateQ1, TetDate } = require("./bai5");
@@ -158,18 +158,28 @@ describe("bai5", function () {
 describe("bai6", function () {
   describe("a", function () {
     it("case1", function () {
-      var Text = "JavaScript strings are for storing and manipulating text";
+      var Text = "Folder Lock uses a master password to control locked content";
       var newage = timkiem(Text);
       assert.equal(newage, -1);
     });
   });
   describe("b", function () {
     it("case1", function () {
-      var Text = "JavaScript strings are for storing and manipulating text";
+      var Text = "Folder Lock uses a master password to control locked content";
       var newage = thaythe(Text);
       assert.equal(
         newage,
-        "J@vaScript strings are for storing and manipulating text"
+        "Folder Lock uses @ m@ster p@ssword to control locked content"
+      );
+    });
+  });
+  describe("c", function () {
+    it("case1", function () {
+      var Text = "Folder Lock uses a master password to control locked content";
+      var newage = laychuoi(Text);
+      assert.equal(
+        newage,
+        "ent"
       );
     });
   });
