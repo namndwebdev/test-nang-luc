@@ -1,49 +1,42 @@
-// Bài 1 : Cho var arr= [18,3,2,20,11,9,1] !!Chú ý "Các câu hỏi a,b,c,d có dữ liệu liên quan với nhau"
-// a . Thêm số 7 vào cuối arr 
+// Bài 1 : Cho var arr= [5,3,2,14,11,16,8]
+// a . Thêm số 7 vào cuối arr và loại bỏ phần tử đầu tiên của mảng
 // B . Sắp xếp các phần tử arr theo thứ tự tăng dần và giảm dần
 // c,Tính tổng các số chẵn có trong arr
 // d ,Chuyển arr sang kiểu chuỗi và thêm dấu '-' giữa các phần tử ?
 
-//LƯU Ý CHỈ ĐƯỢC CHỈNH SỬA TRONG ĐOẠN 
- //* Code here
-//* ...
-//* End
-
 function addARR(arr) {
-  //Code here
-  //...
+  arr.push(7);
   return arr;
-  //End
 }
-
-function sapxeptangdan(arr) {
- //Code here
-  //...
+function sortarr(arr) {
+  arr.sort(function (a, b) {
+    return a - b;
+  });
   return arr;
-  //End
 }
-function sapxepgiamdan(arr) {
-//Code here
-  //...
+function sortarr1(arr) {
+  arr.sort(function (a, b) {
+    return b - a;
+  });
   return arr;
-  //End
 }
 function sum(arr) {
-//Code here
-  //...
-  return arr;
-  //End
+  var newarr = arr.filter(function (value) {
+    return value % 2 === 0;
+  });
+  var sumvalue = newarr.reduce(function (init, value) {
+    return (init += value);
+  }, 0);
+  return sumvalue;
 }
 function mystring(arr) {
-  //Code here
-  //...
-  return arr;
-  //End
+  var newarr = arr.join("-");
+  return newarr;
 }
 module.exports = {
   addARR,
-  sapxeptangdan,
-  sapxepgiamdan,
+  sortarr,
+  sortarr1,
   sum,
   mystring,
 };

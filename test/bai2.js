@@ -4,10 +4,11 @@
 // Còn lại là người cao tuổi.
 
 function age(ageA) {
-  //Code here
-  //...
-  return ageA;
-  //End
+  return ageA < 18
+    ? "tre em"
+    : ageA >= 18 && ageA < 60
+    ? "nguoi truong thanh "
+    : "nguoi cao tuoi";
 }
 module.exports = {
   age,

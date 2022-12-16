@@ -1,8 +1,8 @@
 let expect = require("chai").expect;
-let { addARR, sapxeptangdan, sapxepgiamdan, sum, mystring } = require("./bai1");
+let { addARR, sortarr, sortarr1, sum, mystring } = require("./bai1");
 let { age } = require("./bai2");
 let { Number, sortsanpham, title } = require("./bai4");
-let { timkiem, thaythe,laychuoi } = require("./bai6");
+let { timkiem, thaythe } = require("./bai6");
 let { FunctionTest } = require("./bai7");
 let { Print, Sum, PrintArr4, PrintArr4Odd } = require("./bai3");
 let { DateQ1, TetDate } = require("./bai5");
@@ -11,42 +11,42 @@ var assert = require("assert");
 describe("bai1", function () {
   describe("a", function () {
     it("case1", function () {
-      var arr = [18,3,2,20,11,9,1];
+      var arr = [5, 3, 2, 14, 11, 16, 8];
       var newarr = addARR(arr);
       assert.equal(newarr[newarr.length - 1], 7);
     });
     it("case2", function () {
-      var arr = [18,3,2,20,11,9,1];
+      var arr = [5, 3, 2, 14, 11, 16, 8];
       var newarr = addARR(arr);
       assert.equal(newarr.length, 8);
     });
   });
   describe("b1", function () {
     it("case 1", function () {
-      var arr = [18,3,2,20,11,9,1,7];
-      var newarr = sapxeptangdan(arr);
-      expect(newarr).to.eql([1,2,3,7,9,11,18,20]);
+      var arr = [5, 3, 2, 14, 11, 16, 8, 7];
+      var newarr = sortarr(arr);
+      expect(newarr).to.eql([2, 3, 5, 7, 8, 11, 14, 16]);
     });
   });
   describe("b2", function () {
     it("case 1", function () {
-      var arr = [18,3,2,20,11,9,1,7];
-      var newarr = sapxepgiamdan(arr);
-      expect(newarr).to.eql([20,18,11,9,7,3,2,1]);
+      var arr = [5, 3, 2, 14, 11, 16, 8, 7];
+      var newarr = sortarr1(arr);
+      expect(newarr).to.eql([16, 14, 11, 8, 7, 5, 3, 2]);
     });
   });
   describe("c", function () {
     it("case 1", function () {
-      var arr = [18,3,2,20,11,9,1,7];
+      var arr = [5, 3, 2, 14, 11, 16, 8, 7];
       var newarr = sum(arr);
       assert.equal(newarr, 40);
     });
   });
   describe("d", function () {
     it("case 1", function () {
-      var arr = [18,3,2,20,11,9,1,7];
+      var arr = [5, 3, 2, 14, 11, 16, 8, 7];
       var newarr = mystring(arr);
-      assert.equal(newarr, "18-3-2-20-11-9-1-7");
+      assert.equal(newarr, "5-3-2-14-11-16-8-7");
     });
   });
 });
@@ -63,30 +63,32 @@ describe("bai2", function () {
 describe("bai3", function () {
   describe("a", function () {
     it("case1", function () {
-      var arr = [12,2,5,"15","0", 1,20,10,"1","7"] ;
+      var arr = ["8", 2, 5, 12, "0", 1, 3, 10, "1", "7"];
       const newarr = Print(arr);
-      expect(newarr).to.eql([12, 2, 5, 1,20, 10]);
+      // assert.equal(newarr, "5-3-2-14-11-16-8-7");
+      expect(newarr).to.eql([2, 5, 12, 1, 3, 10]);
     });
   });
   describe("b", function () {
     it("case1", function () {
-      var arr = [12, 2, 5, 1,20, 10];
+      var arr = [2, 5, 12, 1, 3, 10];
       var newarr = Sum(arr);
-      assert.equal(newarr, 50);
+      // assert.equal(newarr, "5-3-2-14-11-16-8-7");
+      assert.equal(newarr, 33);
     });
   });
   describe("c", function () {
     it("case1", function () {
-      var arr = [12,2,5,"15","0", 1,20,10,"1","7"] ;
+      var arr = ["8", 2, 5, 12, "0", 1, 3, 10, "1", "7"];
       var newarr = PrintArr4(arr);
-      expect(newarr).to.eql([12,2,5,"15","0",20,10,"1","7"]);
+      expect(newarr).to.eql(["8", 2, 5, 12, "0", 3, 10, "1", "7"]);
     });
   });
   describe("d", function () {
     it("case1", function () {
-      var arr = [12,2,5,"15","0", 1,20,10,"1","7"] ;
+      var arr = ["8", 2, 5, 12, "0", 1, 3, 10, "1", "7"];
       var newarr = PrintArr4Odd(arr);
-      expect(newarr).to.eql(["15","1", "7"]);
+      expect(newarr).to.eql(["1", "7"]);
     });
   });
 });
@@ -94,36 +96,40 @@ describe("bai3", function () {
 describe("bai4", function () {
   describe("a", function () {
     it("case1", function () {
-      var sanPham =
-      [{ten :"Dienthoai",gia:40000,soLuong:120},
-      {ten :"Xe",gia:12000,soLuong:60 },
-      {ten :" Maytinh",gia:90000,soLuong:20}];
+      var sanPham = [
+        { ten: "Mũ", gia: 30000, soLuong: 100 },
+        { ten: "Áo ", gia: 12000, soLuong: 50 },
+        { ten: " Túi", gia: 101000, soLuong: 20 },
+      ];
       var newage = Number(sanPham);
       assert.equal(newage, 200);
     });
   });
   describe("b", function () {
     it("case1", function () {
-      var sanPham =
-      [{ten :"Dienthoai",gia:40000,soLuong:120},
-      {ten :"Xe",gia:12000,soLuong:60 },
-      {ten :" Maytinh",gia:90000,soLuong:20}];
+      var sanPham = [
+        { ten: "Mũ", gia: 30000, soLuong: 100 },
+        { ten: "Áo ", gia: 12000, soLuong: 50 },
+        { ten: " Túi", gia: 101000, soLuong: 20 },
+      ];
       var newage = sortsanpham(sanPham);
       expect(newage).to.eql([
-        {ten :"Xe",gia:12000,soLuong:60 },
-        {ten :"Dienthoai",gia:40000,soLuong:120},
-        {ten :" Maytinh",gia:90000,soLuong:20}
+        { ten: " Túi", gia: 101000, soLuong: 20 },
+        { ten: "Áo ", gia: 12000, soLuong: 50 },
+        { ten: "Mũ", gia: 30000, soLuong: 100 },
       ]);
     });
   });
   describe("c", function () {
     it("case1", function () {
-      var sanPham =
-      [{ten :"Dienthoai",gia:40000,soLuong:120},
-      {ten :"Xe",gia:12000,soLuong:60 },
-      {ten :" Maytinh",gia:90000,soLuong:20}];
+      var sanPham = [
+        { ten: "Mũ", gia: 30000, soLuong: 100 },
+        { ten: "Áo", gia: 12000, soLuong: 50 },
+        { ten: "Túi", gia: 101000, soLuong: 20 },
+      ];
       var newage = title(sanPham);
-      assert.equal(newage, "Xe:60");
+
+      assert.equal(newage, "Áo:20");
     });
   });
 });
@@ -152,28 +158,18 @@ describe("bai5", function () {
 describe("bai6", function () {
   describe("a", function () {
     it("case1", function () {
-      var Text = "Folder Lock uses a master password to control locked content";
+      var Text = "JavaScript strings are for storing and manipulating text";
       var newage = timkiem(Text);
       assert.equal(newage, -1);
     });
   });
   describe("b", function () {
     it("case1", function () {
-      var Text = "Folder Lock uses a master password to control locked content";
+      var Text = "JavaScript strings are for storing and manipulating text";
       var newage = thaythe(Text);
       assert.equal(
         newage,
-        "Folder Lock uses @ m@ster p@ssword to control locked content"
-      );
-    });
-  });
-  describe("c", function () {
-    it("case1", function () {
-      var Text = "Folder Lock uses a master password to control locked content";
-      var newage = laychuoi(Text);
-      assert.equal(
-        newage,
-        "ent"
+        "J@vaScript strings are for storing and manipulating text"
       );
     });
   });
@@ -182,8 +178,8 @@ describe("bai6", function () {
 describe("bai7", function () {
   describe("bai7", function () {
     it("case1", function () {
-      var newFunction = FunctionTest(5);
-      assert.equal(newFunction, 120);
+      var newFunction = FunctionTest(4);
+      assert.equal(newFunction, 24);
     });
   });
 });
