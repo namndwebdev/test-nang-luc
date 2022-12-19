@@ -4,12 +4,16 @@
 
 var Text = "JavaScript strings are for storing and manipulating text";
 function timkiem(Text) {
-  var index = Text.indexOf("nodemy");
-  return index;
+  //Code here
+  //...
+  return Text;
+  //End
 }
 function thaythe(Text) {
-  var index1 = Text.replace("a", "@");
-  return index1;
+ //Code here
+  //...
+  return Text;
+  //End
 }
 module.exports = {
   timkiem,
