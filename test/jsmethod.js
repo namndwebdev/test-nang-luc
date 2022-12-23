@@ -39,7 +39,7 @@ describe("bai1", function () {
     it("case 1", function () {
       var arr = [18,3,2,20,11,9,1,7];
       var newarr = sum(arr);
-      assert.equal(newarr, 71);
+      assert.equal(newarr, 40);
     });
   });
   describe("d", function () {
