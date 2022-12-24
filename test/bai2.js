@@ -4,9 +4,8 @@
 // Còn lại là người cao tuổi.
 
 function age(ageA) {
-  //Code here
-  //...
-  return ageA;
+var newArr = ageA < 18 ? 'Trẻ em' : ageA < 60 ? "Người trưởng thành" : 'nguoi cao tuoi'
+  return newArr;
   //End
 }
 module.exports = {
