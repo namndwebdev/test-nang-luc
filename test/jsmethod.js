@@ -39,7 +39,7 @@ describe("bai1", function () {
     it("case 1", function () {
       var arr = [5, 3, 2, 14, 11, 16, 8, 7];
       var newarr = sum(arr);
-      assert.equal(newarr, 71);
+      assert.equal(newarr, 40);
     });
   });
   describe("d", function () {
@@ -116,10 +116,10 @@ describe("bai4", function () {
       ];
       var newage = sortsanpham(sanPham);
       expect(newage).to.eql([
-        { ten: " Túi", gia: 101000, soLuong: 20 },
-        { ten: "Quan", gia: 12000, soLuong: 30 },
         { ten: "Áo ", gia: 12000, soLuong: 50 },
+        { ten: "Quan", gia: 12000, soLuong: 30 },
         { ten: "Mũ", gia: 30000, soLuong: 100 },
+        { ten: " Túi", gia: 101000, soLuong: 20 },
       ]);
     });
   });

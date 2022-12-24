@@ -8,22 +8,24 @@
 // c.	Sử dụng vòng lặp để tìm sản phẩm có giá là 12000 đ . (In ra tên giá và số lượng) (VD output: "Túi:20" )
 
 function Number(sanPham) {
- //Code here
-  //...
-  return sanPham;
-  //End
+  let total = 0
+ sanPham.forEach(function(value){
+  total += value.soLuong
+})
+return total
 }
 function sortsanpham(sanPham) {
-  //Code here
-  //...
-  return sanPham;
-  //End
+ var newArr = sanPham.sort((a,b) => a.gia - b.gia)
+ return newArr
 }
 function title(sanPham) {
- //Code here
-  //...
-  return sanPham;
-  //End
+  var newArr = [];
+  sanPham.forEach((value) =>{
+    if(value.gia === 101000){
+      newArr.push(`${value.ten}:${value.soLuong}`)
+    }
+  })
+return newArr
 }
 module.exports = {
   Number,
